@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
+}
+
+.product-detail {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+
+.imagery {
+	flex: 1 1 60%;
+	width: 60%;
+	padding: 50px 100px;
+	background-color: #2E8B57;
+	transition: 0.4s;
+}
+.imagery img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	animation: fadein 1s ease-in-out forwards;
+	animation-delay: 0.5s;
+	opacity: 0;
+}
+
+.detail {
+	flex: 1 1 40%;
+	width: 40%;
+	padding: 50px;
+}
+
+.detail h1 {
+	color: #212121;
+	font-size: 32px;
+	font-weight: 900;
+}
+.detail h2 {
+	color: #53565A;
+	font-size: 22px;
+	font-weight: 700px;
+}
+.detail h3 {
+	color: #53565A;
+	font-size: 22px;
+	font-weight: 300;
+	margin-bottom: 50px;
+}
+
+.btn_grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px -15px;
+}
+
+.btn_grid .btn_wrap {
+	flex: 1 1 50%;
+	width: 50%;
+	padding: 15px;
+}
+
+.checkboxgroup{
+	display: block;
+    width: absolute;
+	margin-top: 15px;
+	padding: 15px;
+	color: #313131;
+	font-size: 18px;
+	font-weight: 700;
+	border: 2px solid #EEE;
+}
+.checkboxgroup p{
+    width: 100%;
+    text-align: center;
+}
+.checkboxgroup label{
+    width: 100%;
+    float: left;	
+}
+
+.align-left {
+	float: left;
+}
+
+.align-right {
+	float: right;
+}
+
+button {
+	display: block;
+	width: 100%;
+	padding: 15px;
+
+	appearance: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+	border: 2px solid #EEE;
+
+	color: #313131;
+	font-size: 20px;
+	font-weight: 700;
+
+	transition: 0.4s;
+}
+
+#final {
+	float: right;
+	width: 50%;
+}
+
+.outputtotal {
+	display: block;
+	float: left;
+	width: 50%;
+	padding: 15px;
+
+	appearance: none;
+	outline: none;
+	background: none;
+	border: 2px solid #EEE;
+
+	color: #313131;
+	font-size: 20px;
+	font-weight: 700;
+
+	transition: 0.4s;
+	margin-top: 50px;
+	background-image: linear-gradient(to right, transparent 50%, #ED008D 50%, #8D00ED 100%);
+	background-size: 200%;
+	background-position: 0% 50%;
+	transition: 0.8s;
+}
+
+button:hover {
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+button.specs {
+	position: relative;
+	z-index: 1;
+}
+button.specs::before,
+button.specs::after {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	right: -3px;
+	bottom: -3px;
+	transition: 0.4s;
+}
+button.specs::after {
+	z-index: -1;
+	background-color: #FFF;
+	border: 3px solid #EEE;
+}
+button.specs::before {
+	z-index: -2;
+	background-image: linear-gradient(to right, #ED008D, #8D00ED);
+}
+button.specs.selected::after {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.colours .btn_wrap .pink.selected {
+	background-color: #FFC0CB;
+	color: #FFF;
+}
+
+.colours .btn_wrap .green.selected {
+	background-color: #2E8B57;
+	color: #FFF;
+}
+
+.colours .btn_wrap .yellow.selected {
+	background-color: #FFCE00;
+	color: #212121;
+}
+
+.colours .btn_wrap .grey.selected {
+	background-color: #696969;
+	color: #FFF;
+}
+
+.colours .btn_wrap .white.selected {
+	background-color: #EEE;
+	color: #212121;
+}
+
+.colours .btn_wrap .black.selected {
+	background-color: #212121;
+	color: #FFF;
+}
+
+
+.total {
+	margin-top: 50px;
+	background-image: linear-gradient(to right, transparent 50%, #ED008D 50%, #8D00ED 100%);
+	background-size: 200%;
+	background-position: 0% 50%;
+	transition: 0.8s;
+}
+.total:hover {
+	color: #FFF;
+	background-position: 100% 50%;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #ED008D;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+@keyframes fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@media all and (max-width: 600px) {
+	.product-detail {
+		flex-direction: row;
+        flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	
+	.imagery {
+		width: 100%;
+		order: 2;
+	}
+	
+	.detail {
+		width: 100%;
+		order: 1;
+	}	
+}
